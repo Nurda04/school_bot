@@ -138,6 +138,7 @@ def class_repass(class_pass_new, class_name):
     cur.execute("UPDATE classes SET password = ? WHERE class = ?", (class_pass_new, class_name))
     db.commit()
 
+
 # - - - Инфо класса - - -
 def get_class_info(class_name):
     info = cur.execute("SELECT class, password FROM classes WHERE class = ?", (class_name,)).fetchall()[0]
