@@ -1,4 +1,4 @@
-from aiogram import types, executor
+from aiogram import executor
 from dispatcher import dp
 import database as db
 import handlers
