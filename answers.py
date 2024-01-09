@@ -19,16 +19,11 @@ def class_info(class_name, operation):
 
 def profile_get(user_id):
     text = f'Имя: {db.get_name(user_id)}'
-    texts = {
-        3 : "\nСозданные классы:",
-        2 : "\nАдмин в:",
-        1 : "\nМодератор в:",
-        0 : "\nУчастник в:"
-    }
+    texts = ["\nУчастник в:", "\nМодератор в:", "\nАдмин в:", "\nСозданные классы:"]
     for i in reversed(range(4)):
         profile = db.get_classes_admin(user_id, i)
         admin = ' ' if not profile[0] else profile[0]
-        text += f'{texts.get(i)} {admin}'
+        text += f'{texts[i]} {admin}'
     return text
 
 
